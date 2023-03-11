@@ -1,0 +1,2 @@
+class LevelOfEducation < ApplicationRecord
+end
