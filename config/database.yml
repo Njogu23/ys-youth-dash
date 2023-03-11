@@ -73,14 +73,15 @@ test:
 # the values provided in this file. Alternatively, you can specify a connection
 # URL environment variable explicitly:
 #
-  production:
-    url: <%= ENV[postgresql://{ PGUSER }:{ PGPASSWORD }:{ PGHOST }:{ PGPORT }:{ PGDATABASE }"] %>
+#   production:
+#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
 production:
   <<: *default
-  database: ys_youth_dash_production
-  username: ys_youth_dash
-  password: <%= ENV["YS_YOUTH_DASH_DATABASE_PASSWORD"] %>
+   url: <%= ENV["MY_APP_DATABASE_URL"] %>
+  # database: ys_youth_dash_production
+  # username: ys_youth_dash
+  # password: <%= ENV["YS_YOUTH_DASH_DATABASE_PASSWORD"] %>
